@@ -1,17 +1,3 @@
-def obsolete(func):
-    start = 0
-    li = []
-    for i in range(len(func)):
-
-        if func[i] == "-" or func[i] == "+":
-
-            if func[start:i]!= '':
-                li.append(func[start:i])
-            start = i
-        if i == len(func)-1:
-            li.append(func[start:i+1])
-    return li
-
 class Thing:
     def __init__(self, func, num=None, x=None, veldi=None):
         if num != None:
@@ -63,16 +49,6 @@ class Thing:
     def __str__(self):
         return "%s%s%s%s"%(self.sign, self.num, self.x, self.veldi)
 
-def obsolete(li, a, b):
-    new = []
-    total = 0
-    for i in li:
-        new.append(i.heilda())
-    for i in new:
-        total+= i.calculate(b)
-    for i in new:
-        total -= i.calculate(a)
-    return total
 
 class Function:
     def __init__(self, func):
